@@ -1,0 +1,11 @@
+# !/bin/bash
+
+if [ "$#" -ne 2 ] ; then
+    echo "USAGE:\n\t./CompressIt img_path nbr_of_color\n"
+    echo "DESCRIPTION\n\t- img_path:  Path that lead to the image. Image could be in following format: png"
+    echo "\t- nbr_of_color:  number of color you are waiting in final result\n"
+else
+    ./bonus/prepare_pict.py $1
+    ./imageCompressor $2 1 convert_img > ./tmp
+    ./bonus/create_img.py $1
+fi

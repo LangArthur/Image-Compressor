@@ -5,7 +5,6 @@ import sys
 from PIL import Image
 
 def main():
-    res = []
     av = sys.argv
     img = Image.open(av[1])
     array = img.load()

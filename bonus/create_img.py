@@ -6,10 +6,9 @@ import sys
 
 from PIL import Image
 
-path = "./new_img"
+tmpPath = "./tmp"
 
 def getCentroid(line):
-    res = ()
     line = line.replace("(", "").replace(")", "").split(',')
     r = int(line[0])
     g = int(line[1])
@@ -23,7 +22,7 @@ def creatKey(i, j):
     return "(" + str(i) + "," + str(j) + ")"
 
 def getPointArray(points):
-    res = [];
+    res = []
     i = 0
     j = 0
     line = []
@@ -43,8 +42,9 @@ def getPointArray(points):
 
 def treatContent(content):
     file = content.split('\n')
-    points = {};
-    i = 0;
+    points = {}
+    i = 0
+    print(file[i])
     while(file[i]):
         if (file[i] == "--" and file[i + 1]):
             centroid = getCentroid(file[i + 1])
@@ -55,18 +55,18 @@ def treatContent(content):
 
 def main():
     av = sys.argv
-    f = open(path, "r")
+    f = open(tmpPath, "r")
     content = treatContent(f.read())
     img = Image.new("RGB", (len(content), len(content[0])))
     pix = img.load()
-    x = 0;
-    y = 0;
+    x = 0
+    y = 0
     for line in content:
         for point in line:
             pix[y, x] = point
-            y += 1;
-        y = 0;
-        x += 1;
+            y += 1
+        y = 0
+        x += 1
     img.save(av[1].split(".")[0] + "_compressed.jpg")
     return(0)
 
