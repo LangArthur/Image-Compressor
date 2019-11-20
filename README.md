@@ -1,2 +1,3 @@
 # Image-Compressor
-Haskell Image compressor
+
+Haskell Image Compressor
