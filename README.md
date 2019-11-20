@@ -16,15 +16,16 @@ make
 
 And launch application
 
-There are two version of my Image Compressor.
+There are two versions of my Image Compressor.
 
-Real image compressor : 
+Final image compressor : 
     
 ```
 ./CompresseIt path n
 ```
-path    path to the image to convert
-n       number of color in the final image
+
+path : path to the image to convert
+n : number of color in the final image
 
 
 ImageCompressor for Epitech Projet : 
@@ -32,26 +33,28 @@ ImageCompressor for Epitech Projet :
 ./imageCompressor n e IN
 ```
        
-n   number of color in the final image
-e   convergence limit
-IN  path to the file containing the colors of the pixel
-    with :
-    IN ::= POINT COLOR ( ’\n ’ POINT COLOR ) *
-    POINT ::= ’( ’ int ’,’ int ’) ’
-    COLOR ::= ’( ’ SHORT ’,’ SHORT ’,’ SHORT ’) ’
-    SHORT ::= ’0 ’.. ’255 ’
+n : number of color in the final image
+e : convergence limit
+IN : path to the file containing the colors of the pixel
+
+Annexe about file Grammar : 
+
+IN ::= POINT COLOR ( ’\n ’ POINT COLOR ) *
+POINT ::= ’( ’ int ’,’ int ’) ’
+COLOR ::= ’( ’ SHORT ’,’ SHORT ’,’ SHORT ’) ’
+SHORT ::= ’0 ’.. ’255 ’
 
 
 ## Running the tests
 
-For running the test, use the make tests_run commande
+For running all tests, use the make tests_run command
 ```
 make tests_run
 ```
 
 WARNING !
 By default, tests will be open in firefox window.
-If you don't have firefox on your computer, you can modifiy the Makefile command l.29
+If you don't have firefox on your computer, you can modifiy the Makefile command l.29 (It will be correct in futur version)
 
 ## Built With
 
