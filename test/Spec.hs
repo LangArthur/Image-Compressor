@@ -35,8 +35,8 @@ main = hspec $ do
     it "Convert a line" $ convertLine "(3,2) (4,33,1)" `shouldBe` ("(3,2)", [4.0, 33.0, 1.0])
     it "Convert data to float array" $ toFloatArray ["(3,2) (4,33,1)"] `shouldBe` Just ([("(3,2)", [4.0, 33.0, 1.0])])
     it "Test bad arguments" $ parseArg 0 6 "unit_test_ko" `shouldThrow` (== ExitFailure 84)
-    it "Test bad file" $ parseArg 3 6 "unit_test_ko" `shouldThrow` (== ExitFailure 84)
-    it "Test bad file" $ parseArg 3 6 "test_ko" `shouldThrow` (== ExitFailure 84)
+    it "Test bad file" $ parseArg 3 6 "./test/unit_test_ko" `shouldThrow` (== ExitFailure 84)
+    it "Test bad file" $ parseArg 3 6 "./test/unit_test_ko" `shouldThrow` (== ExitFailure 84)
 
     it "Compute euclidian distance" $ computeDistance [3, 4, 5] [3, 8, 2] `shouldBe` 5.0
     it "Find shorter distance point position" $ findShorterPos [[3, 5, 5], [6, 3, 2], [4, 3, 3]] [3, 2, 3] `shouldBe` [4.0, 3.0, 3.0]
