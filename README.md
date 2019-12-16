@@ -5,6 +5,7 @@ Haskell Image Compressor
 ### Prerequisites
 
 To use these Image Compressor, you need to install stack : https://docs.haskellstack.org/en/stable/README/.
+In addition, you need python 3 with the librairie Pillow : https://pillow.readthedocs.io/en/stable/
 
 ### Installing
 
@@ -25,6 +26,7 @@ Final image compressor :
 ```
 
 path : path to the image to convert
+
 n : number of color in the final image
 
 
@@ -34,14 +36,19 @@ ImageCompressor for Epitech Projet :
 ```
        
 n : number of color in the final image
+
 e : convergence limit
+
 IN : path to the file containing the colors of the pixel
 
 Annexe about file Grammar : 
 
 IN ::= POINT COLOR ( ’\n ’ POINT COLOR ) *
+
 POINT ::= ’( ’ int ’,’ int ’) ’
+
 COLOR ::= ’( ’ SHORT ’,’ SHORT ’,’ SHORT ’) ’
+
 SHORT ::= ’0 ’.. ’255 ’
 
 
@@ -54,11 +61,13 @@ make tests_run
 
 WARNING !
 By default, tests will be open in firefox window.
-If you don't have firefox on your computer, you can modifiy the Makefile command l.29 (It will be correct in futur version)
+If you don't have firefox on your computer, you can modifiy the Makefile at l.29 (It will be correct in futur version)
 
 ## Built With
 
 * [Stack](https://docs.haskellstack.org/en/stable/README/) - The Haskell Tool Stack
+* [Python 3](https://www.python.org) - The Haskell Tool Stack
+* [Pillow](https://pillow.readthedocs.io/en/stable/) - Python Imaging Librairie
 
 ## Authors
 

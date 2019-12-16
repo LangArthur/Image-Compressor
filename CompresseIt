@@ -5,7 +5,12 @@ if [ "$#" -ne 2 ] ; then
     echo "DESCRIPTION\n\t- img_path:  Path that lead to the image. Image could be in following format: png"
     echo "\t- nbr_of_color:  number of color you are waiting in final result\n"
 else
-    ./bonus/prepare_pict.py $1
-    ./imageCompressor $2 1 convert_img > ./tmp
-    ./bonus/create_img.py $1
+	echo "\e[1;34mPrepare image image$<\e[0m"
+    ./bonus/convertImage.py $1
+	echo "\e[1;34mConverting image$<\e[0m"
+    ./imageCompressor $2 1 .convert_img > ./.tmp
+	echo "\e[1;34mCreate new image$<\e[0m"
+    ./bonus/buildNewImage.py $1
+    rm ./.tmp
+    rm ./.convert_img
 fi
