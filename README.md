@@ -58,10 +58,7 @@ For running all tests, use the make tests_run command
 ```
 make tests_run
 ```
-
-WARNING !
-By default, tests will be open in firefox window.
-If you don't have firefox on your computer, you can modifiy the Makefile at l.29 (It will be correct in futur version)
+A coverage report will be open in the default browser
 
 ## Built With
 
